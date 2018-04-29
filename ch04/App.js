@@ -17,10 +17,12 @@ export default class App extends Component<Props> {
   render() {
     return (
       <Navigator
+        //定义初始化启动页面
         initialRoute={{
           name: 'home',
           component: Home
         }}
+        //定义跳转动画
         configureScene={(route) => {
           return Navigator.SceneConfigs.FloatFromRight;
         }}

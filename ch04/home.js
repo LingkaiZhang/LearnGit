@@ -21,6 +21,7 @@ import {
   Image,
   RefreshControl
 } from 'react-native';
+import Detail from './detail';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -201,7 +202,12 @@ export default class home extends Component<Props> {
   }
   _renderRow = (rowData, sectionID, rowID) => {
       return (
-        <TouchableHighlight onPress={() => Alert.alert("你单击了商品列表", null, null)}>
+        <TouchableHighlight onPress={() => {
+          const {navigator} = this.props;
+          if (navigator) {
+            navigator.push({name: 'detail', component: Detail});
+          }
+        }}>
           <View style={styles.row}>
             <Image source={rowData.image}
               style={styles.productImage}>
