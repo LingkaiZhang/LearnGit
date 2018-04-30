@@ -205,7 +205,13 @@ export default class home extends Component<Props> {
         <TouchableHighlight onPress={() => {
           const {navigator} = this.props;
           if (navigator) {
-            navigator.push({name: 'detail', component: Detail});
+            navigator.push({
+              name: 'detail',
+              component: Detail,
+              params: {
+                productTitle: rowData.title
+              }
+            });
           }
         }}>
           <View style={styles.row}>
