@@ -9,7 +9,7 @@ import {
   View
 } from 'react-native';
 import { Navigator } from 'react-native-deprecated-custom-components'
-import Home from './home';
+import Main from './main';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -19,8 +19,8 @@ export default class App extends Component<Props> {
       <Navigator
         //定义初始化启动页面
         initialRoute={{
-          name: 'home',
-          component: Home
+          name: 'main',
+          component: Main
         }}
         //定义跳转动画
         configureScene={(route) => {
